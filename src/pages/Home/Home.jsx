@@ -1,6 +1,3 @@
-import BigVideo from "./BigVideo";
-import SmallVideo from "./SmallVideo";
-
 const Home = () => {
   return (
     <div id="mobile-router-root" className="UPEED">
@@ -20,6 +17,7 @@ const Home = () => {
                 id="stream-4_sRlBV1td_eD2aqTib7Vg"
               >
                 <video
+                  disablepictureinpicture
                   playsInline
                   className="KPCas Rl_wI"
                   crossOrigin="use-credentials"
@@ -27,8 +25,6 @@ const Home = () => {
                   autoPlay
                   muted
                 />
-                {/* <SmallVideo /> */}
-
                 <div
                   className="Q60zq"
                   style={{ "-pipwidth": "151.54px", "-pipheight": "269.41px" }}
@@ -36,31 +32,21 @@ const Home = () => {
                   <div
                     id="draggablePipsGrid"
                     className="Tz0po YXV0S BGo6O Iwjyu"
-                    style={{
-                      height: "200px",
-                      width: "150px",
-                      right: "0px",
-                      top: 0,
-                      background: "transparent",
-                    }}
                   >
                     <div
                       data-testid="pip-player-aN_ubJshDnvgYf9Nb-UxFQ"
                       className="NODDu DPZ3R"
-                      style={{
-                        gridArea: "pip_0_0",
-                      }}
+                      style={{ gridArea: "pip_0_0" }}
                     >
                       <video
+                        disablepictureinpicture
                         playsInline
-                        className="aSvNa  ttttttt"
+                        className="aSvNa"
                         crossOrigin="use-credentials"
                         src="/src/assets/video/1.mp4"
                         autoPlay
                         muted
                       />
-
-                      <BigVideo />
                       <div className="x3Pt5 eEVS4 pXe6i" data-testid="spinner">
                         <div
                           className="ORE05"
@@ -95,8 +81,6 @@ const Home = () => {
                       </div>
                     </div>
                   </div>
-
-                  {/*  */}
                   <div className="LhDO6">
                     <div className="qVaRv">
                       <div className="ImTwj ICUVz">
@@ -1281,7 +1265,6 @@ const Home = () => {
                       </span>
                     </button>
                   </div>
-                  {/*  */}
                 </div>
               </div>
             </div>

@@ -1,3 +1,8 @@
+:root {
+  --pipWidth: 151.54px;
+  --pipHeight: 269.41px;
+}
+
 #headline-title {
   position: absolute;
   clip: rect(1px, 1px, 1px, 1px);
