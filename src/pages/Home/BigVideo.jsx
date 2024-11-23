@@ -11,7 +11,7 @@ const BigVideo = () => {
     embeddedPlayerRef.current = new WebPlayer(
       {
         streamId: "stream2",
-        httpBaseURL: "/src/assets/video/1.mp4",
+        httpBaseURL: "https://vid1.live/live/",
         videoHTMLContent:
           '<video id="video-player" class="video-js vjs-default-skin vjs-big-play-centered"  playsinline style="width:100%;height:100%"></video>',
         playOrder: playOrderLocal,
@@ -33,11 +33,14 @@ const BigVideo = () => {
   return (
     <div
       style={{
-        display: "flex",
-        height: "100vh",
-        width: "100vw",
+        width: "100%",
+        height: "100%",
+        position: "absolute",
+        top: 0,
+        right: 0,
+        left: 0,
+        bottom: 0,
       }}
-      // id="big-video-container"
       ref={bigVideo}
     ></div>
   );

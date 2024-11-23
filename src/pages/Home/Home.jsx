@@ -1,3 +1,4 @@
+import BigVideo from "./BigVideo";
 const Home = () => {
   return (
     <div id="mobile-router-root" className="UPEED">
@@ -16,7 +17,7 @@ const Home = () => {
                 data-testid="mobile-stream"
                 id="stream-4_sRlBV1td_eD2aqTib7Vg"
               >
-                <video
+                {/* <video
                   disablepictureinpicture
                   playsInline
                   className="KPCas Rl_wI"
@@ -24,7 +25,8 @@ const Home = () => {
                   src="/src/assets/video/1.mp4"
                   autoPlay
                   muted
-                />
+                /> */}
+                <BigVideo />
                 <div
                   className="Q60zq"
                   style={{ "-pipwidth": "151.54px", "-pipheight": "269.41px" }}
