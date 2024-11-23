@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 const SmallVideo = () => {
   const videoRef = useRef(null);
   //   const placeHolderRef = useRef(null);
+  // https://vid1.live/live/
   const embeddedPlayerRef = useRef(null);
   const playOrderLocal = ["webrtc", "hls", "dash"];
 
@@ -11,7 +12,7 @@ const SmallVideo = () => {
     embeddedPlayerRef.current = new WebPlayer(
       {
         streamId: "stream1",
-        httpBaseURL: "https://vid1.live/live/",
+        httpBaseURL: "/src/assets/video/1.mp4",
         videoHTMLContent:
           '<video id="video-player" class="video-js vjs-default-skin vjs-big-play-centered"  playsinline style="width:100%;height:100%"></video>',
         playOrder: playOrderLocal,

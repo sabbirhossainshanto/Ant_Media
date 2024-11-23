@@ -19,15 +19,15 @@ const Home = () => {
                 data-testid="mobile-stream"
                 id="stream-4_sRlBV1td_eD2aqTib7Vg"
               >
-                {/* <video
+                <video
                   playsInline
                   className="KPCas Rl_wI"
                   crossOrigin="use-credentials"
-                  src="1.mp4"
+                  src="/src/assets/video/1.mp4"
                   autoPlay
                   muted
-                /> */}
-                <SmallVideo />
+                />
+                {/* <SmallVideo /> */}
 
                 <div
                   className="Q60zq"
@@ -37,25 +37,28 @@ const Home = () => {
                     id="draggablePipsGrid"
                     className="Tz0po YXV0S BGo6O Iwjyu"
                     style={{
-                      top: "0px",
-                      gap: "0px",
-                      padding: "0px",
-                      bottom: "0px",
+                      height: "200px",
+                      width: "150px",
+                      right: "0px",
+                      top: 0,
+                      background: "transparent",
                     }}
                   >
                     <div
                       data-testid="pip-player-aN_ubJshDnvgYf9Nb-UxFQ"
                       className="NODDu DPZ3R"
-                      style={{ gridArea: "pip_0_0" }}
+                      style={{
+                        gridArea: "pip_0_0",
+                      }}
                     >
-                      {/* <video
+                      <video
                         playsInline
-                        className="aSvNa"
+                        className="aSvNa  ttttttt"
                         crossOrigin="use-credentials"
-                        src="1.mp4"
+                        src="/src/assets/video/1.mp4"
                         autoPlay
                         muted
-                      /> */}
+                      />
 
                       <BigVideo />
                       <div className="x3Pt5 eEVS4 pXe6i" data-testid="spinner">
