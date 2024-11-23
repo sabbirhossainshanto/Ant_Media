@@ -11,10 +11,10 @@ const SmallVideo = () => {
   useEffect(() => {
     embeddedPlayerRef.current = new WebPlayer(
       {
-        streamId: "stream1",
-        httpBaseURL: "/src/assets/video/1.mp4",
+        streamId: "stream3",
+        httpBaseURL: "https://vid1.live/live/",
         videoHTMLContent:
-          '<video id="video-player" class="video-js vjs-default-skin vjs-big-play-centered"  playsinline style="width:100%;height:100%"></video>',
+          '<video id="video-player" class="video-js vjs-default-skin vjs-big-play-centered"  playsinline style="width:100%;height:100%;object-fit:cover"></video>',
         playOrder: playOrderLocal,
       },
       videoRef.current
@@ -32,20 +32,18 @@ const SmallVideo = () => {
       });
   }, [playOrderLocal]);
   return (
-    <div>
-      <div
-        style={{
-          position: "absolute",
-          top: "20px",
-          right: "0",
-          height: "120px",
-          width: "120px",
-          zIndex: 9999,
-        }}
-        // id="videoContainer"
-        ref={videoRef}
-      ></div>
-    </div>
+    <div
+      style={{
+        position: "absolute",
+        top: "10px",
+        right: "0",
+        height: "200px",
+        width: "120px",
+        zIndex: 9999,
+      }}
+      // id="videoContainer"
+      ref={videoRef}
+    ></div>
   );
 };
 

@@ -1,4 +1,5 @@
 import BigVideo from "./BigVideo";
+import SmallVideo from "./SmallVideo";
 const Home = () => {
   return (
     <div id="mobile-router-root" className="UPEED">
@@ -40,7 +41,7 @@ const Home = () => {
                       className="NODDu DPZ3R"
                       style={{ gridArea: "pip_0_0" }}
                     >
-                      <video
+                      {/* <video
                         disablepictureinpicture
                         playsInline
                         className="aSvNa"
@@ -48,7 +49,8 @@ const Home = () => {
                         src="/src/assets/video/1.mp4"
                         autoPlay
                         muted
-                      />
+                      /> */}
+                      <SmallVideo />
                       <div className="x3Pt5 eEVS4 pXe6i" data-testid="spinner">
                         <div
                           className="ORE05"
