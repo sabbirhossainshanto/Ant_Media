@@ -3,7 +3,6 @@ import { useEffect, useRef } from "react";
 
 const BigVideo = () => {
   const bigVideo = useRef(null);
-  //   const placeHolderRef = useRef(null);
   const embeddedPlayerRef = useRef(null);
   const playOrderLocal = ["webrtc", "hls", "dash"];
 
@@ -17,14 +16,12 @@ const BigVideo = () => {
         playOrder: playOrderLocal,
       },
       bigVideo.current
-      //   placeHolderRef.current
     );
 
     embeddedPlayerRef.current
       .initialize()
       .then(() => {
         embeddedPlayerRef.current.play();
-        console.log("Ok");
       })
       .catch((error) => {
         console.error("Error while initializing embedded player: " + error);

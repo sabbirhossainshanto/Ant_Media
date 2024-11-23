@@ -31,12 +31,8 @@ const SmallVideo = () => {
   return (
     <div
       style={{
-        position: "absolute",
-        top: "10px",
-        right: "0",
-        height: "200px",
-        width: "120px",
-        zIndex: 9999,
+        width: "100%",
+        height: "500px",
       }}
       ref={smallVideoRef}
     ></div>

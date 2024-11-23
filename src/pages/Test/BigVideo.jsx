@@ -1,46 +1,41 @@
 import { WebPlayer } from "@antmedia/web_player";
 import { useEffect, useRef } from "react";
 
-const SmallVideo = () => {
-  const smallVideoRef = useRef(null);
-  const embeddedSmallPlayerRef = useRef(null);
-  const smallPlayOrderLocal = ["webrtc", "hls", "dash"];
+const BigVideo = () => {
+  const bigVideo = useRef(null);
+  const embeddedPlayerRef = useRef(null);
+  const playOrderLocal = ["webrtc", "hls", "dash"];
 
   useEffect(() => {
-    embeddedSmallPlayerRef.current = new WebPlayer(
+    embeddedPlayerRef.current = new WebPlayer(
       {
         streamId: "stream3",
         httpBaseURL: "https://vid1.live/live/",
         videoHTMLContent:
           '<video id="video-player" class="video-js vjs-default-skin vjs-big-play-centered"  playsinline style="width:100%;height:100%;object-fit:cover"></video>',
-        playOrder: smallPlayOrderLocal,
+        playOrder: playOrderLocal,
       },
-      smallVideoRef.current
+      bigVideo.current
     );
 
-    embeddedSmallPlayerRef.current
+    embeddedPlayerRef.current
       .initialize()
       .then(() => {
-        embeddedSmallPlayerRef.current.play();
-        console.log("Ok");
+        embeddedPlayerRef.current.play();
       })
       .catch((error) => {
         console.error("Error while initializing embedded player: " + error);
       });
-  }, [smallPlayOrderLocal]);
+  }, [playOrderLocal]);
   return (
     <div
       style={{
-        position: "absolute",
-        top: "10px",
-        right: "0",
-        height: "200px",
-        width: "120px",
-        zIndex: 9999,
+        width: "100%",
+        height: "500px",
       }}
-      ref={smallVideoRef}
+      ref={bigVideo}
     ></div>
   );
 };
 
-export default SmallVideo;
+export default BigVideo;
