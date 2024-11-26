@@ -8,4 +8,61 @@
   left: 0;
   right: 0;
   height: 35%;
+  width: 100%;
+  transition: height 0.5s ease-in-out, width 0.5s ease-in-out,
+    right 0.5s ease-in-out;
+}
+
+.slider-wrapper {
+  position: relative;
+  overflow: hidden; /* Ensure content stays within the wrapper */
+  width: 100%;
+  height: 100vh; /* Full-page height */
+}
+
+.slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slider.idle {
+  transform: translateX(0);
+}
+
+.slider.sliding-out {
+  transform: translateX(-100%); /* Slide out to the left */
+}
+
+.slider.sliding-in {
+  transform: translateX(100%); /* Start off-screen on the right */
+  animation: slide-in 0.5s ease-in-out forwards;
+}
+
+/* Keyframes for sliding in */
+@keyframes slide-in {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.big-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  color: #fff;
+  background-color: #333;
+  width: 100%;
+  height: 100%;
 }
