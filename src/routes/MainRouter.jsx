@@ -12,7 +12,7 @@ const MainRouter = () => {
         children: [
           {
             index: true,
-            element: <Test />,
+            element: <Home />,
           },
         ],
       },

@@ -18,7 +18,7 @@ const Home = () => {
                 data-testid="mobile-stream"
                 id="stream-4_sRlBV1td_eD2aqTib7Vg"
               >
-                {/* <video
+                <video
                   disablepictureinpicture
                   playsInline
                   className="KPCas Rl_wI"
@@ -26,8 +26,8 @@ const Home = () => {
                   src="/src/assets/video/1.mp4"
                   autoPlay
                   muted
-                /> */}
-                <BigVideo />
+                />
+                {/* <BigVideo /> */}
                 <div
                   className="Q60zq"
                   style={{ "-pipwidth": "151.54px", "-pipheight": "269.41px" }}
@@ -41,7 +41,7 @@ const Home = () => {
                       className="NODDu DPZ3R"
                       style={{ gridArea: "pip_0_0" }}
                     >
-                      {/* <video
+                      <video
                         disablepictureinpicture
                         playsInline
                         className="aSvNa"
@@ -49,8 +49,8 @@ const Home = () => {
                         src="/src/assets/video/1.mp4"
                         autoPlay
                         muted
-                      /> */}
-                      <SmallVideo />
+                      />
+                      {/* <SmallVideo /> */}
                       <div className="x3Pt5 eEVS4 pXe6i" data-testid="spinner">
                         <div
                           className="ORE05"

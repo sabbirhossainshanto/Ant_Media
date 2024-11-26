@@ -9,7 +9,7 @@ const BigVideo = () => {
   useEffect(() => {
     embeddedPlayerRef.current = new WebPlayer(
       {
-        streamId: "stream3",
+        streamId: "stream1",
         httpBaseURL: "https://vid1.live/live/",
         videoHTMLContent:
           '<video id="video-player" class="video-js vjs-default-skin vjs-big-play-centered"  playsinline style="width:100%;height:100%;object-fit:cover"></video>',
