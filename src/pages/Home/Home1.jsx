@@ -22,7 +22,9 @@ const Home1 = () => {
   };
 
   useEffect(() => {
-    setAnimationStage("sliding-in");
+    if (animationStage === "sliding-out") {
+      setAnimationStage("sliding-in");
+    }
   }, [animationStage]);
 
   return (
