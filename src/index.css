@@ -1,3 +1,11 @@
 .video-js .vjs-control-bar {
   display: none !important;
 }
+
+.horizontal_position {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 35%;
+}

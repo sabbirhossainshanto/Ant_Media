@@ -81,6 +81,9 @@ export const getSetApis = (setNoticeLoaded, baseUrl) => {
         settings.apkLink = setting?.apkLink;
         settings.betFairCashOut = setting?.betFairCashOut;
         settings.referral = setting?.referral;
+        settings.small_video_position = setting?.small_video?.position;
+        settings.big_video_visible = setting?.big_video?.visible;
+        settings.referral = setting?.referral;
         setNoticeLoaded(true);
       }
     })

@@ -5,12 +5,13 @@ const SmallVideo = () => {
   const smallVideoRef = useRef(null);
   const embeddedSmallPlayerRef = useRef(null);
   const smallPlayOrderLocal = ["webrtc", "hls", "dash"];
+  // https://vid1.live/live/
 
   useEffect(() => {
     embeddedSmallPlayerRef.current = new WebPlayer(
       {
         streamId: "stream3",
-        httpBaseURL: "https://vid1.live/live/",
+        httpBaseURL: "/src/assets/video/1.mp4",
         videoHTMLContent:
           '<video id="video-player" class="video-js vjs-default-skin vjs-big-play-centered"  playsinline style="width:100%;height:100%;object-fit:cover"></video>',
         playOrder: smallPlayOrderLocal,

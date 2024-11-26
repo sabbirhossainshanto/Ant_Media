@@ -1,6 +1,9 @@
+import { settings } from "../../api";
 import BigVideo from "./BigVideo";
 import SmallVideo from "./SmallVideo";
 const Home = () => {
+  console.log(settings.big_video_visible);
+
   return (
     <div id="mobile-router-root" className="UPEED">
       <div className="PfEVi">
@@ -18,15 +21,17 @@ const Home = () => {
                 data-testid="mobile-stream"
                 id="stream-4_sRlBV1td_eD2aqTib7Vg"
               >
-                <video
-                  disablepictureinpicture
-                  playsInline
-                  className="KPCas Rl_wI"
-                  crossOrigin="use-credentials"
-                  src="/src/assets/video/1.mp4"
-                  autoPlay
-                  muted
-                />
+                {settings.big_video_visible && (
+                  <video
+                    disablepictureinpicture
+                    playsInline
+                    className="KPCas Rl_wI"
+                    crossOrigin="use-credentials"
+                    src="/src/assets/video/1.mp4"
+                    autoPlay
+                    muted
+                  />
+                )}
                 {/* <BigVideo /> */}
                 <div
                   className="Q60zq"
@@ -39,7 +44,9 @@ const Home = () => {
                     <div
                       data-testid="pip-player-aN_ubJshDnvgYf9Nb-UxFQ"
                       className="NODDu DPZ3R"
-                      style={{ gridArea: "pip_0_0" }}
+                      style={{
+                        gridArea: "pip_0_0",
+                      }}
                     >
                       <video
                         disablepictureinpicture

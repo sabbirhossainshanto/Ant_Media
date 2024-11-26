@@ -30,7 +30,13 @@
         "format": "png"
       },
       "baseUrl": "",
-      "build": "production"
+      "build": "production",
+      "small_video": {
+        "position": "horizontal"
+      },
+      "big_video": {
+        "visible": true
+      }
     },
 
     "endpoint": {

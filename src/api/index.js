@@ -74,4 +74,6 @@ export const settings = {
   mac88: "",
   aura: "",
   referral: "",
+  small_video_position: "",
+  big_video_visible: "",
 };
