@@ -5,20 +5,20 @@ import Footer from "./Footer";
 import { useEffect } from "react";
 // import SmallVideo from "./SmallVideo";
 const Home1 = () => {
-  const [smallVideoPosition, setSmallVideoPosition] = useState("vertical");
-  const [bigVideoVisible, setBigVideoVisible] = useState(true);
+  // const [smallVideoPosition, setSmallVideoPosition] = useState("vertical");
+  // const [bigVideoVisible, setBigVideoVisible] = useState(true);
   const [animationStage, setAnimationStage] = useState("idle");
 
   const defineVideosPosition = () => {
-    // if (
-    //   settings.big_video_visible &&
-    //   settings.small_video_position === "vertical"
-    // ) {
-    //   return "default";
-    // }
-    if (bigVideoVisible && smallVideoPosition === "vertical") {
+    if (
+      settings.big_video_visible &&
+      settings.small_video_position === "vertical"
+    ) {
       return "default";
     }
+    // if (bigVideoVisible && smallVideoPosition === "vertical") {
+    //   return "default";
+    // }
   };
 
   useEffect(() => {
@@ -31,10 +31,10 @@ const Home1 = () => {
     <div className="slider-wrapper">
       <div className={`slider ${animationStage}`}>
         <div
-          onClick={() => {
-            setSmallVideoPosition("horizontal");
-            setAnimationStage("sliding-out");
-          }}
+          // onClick={() => {
+          //   setSmallVideoPosition("horizontal");
+          //   setAnimationStage("sliding-out");
+          // }}
           id="mobile-router-root"
           className="UPEED "
         >
@@ -53,7 +53,7 @@ const Home1 = () => {
                     data-testid="mobile-stream"
                     id="stream-4_sRlBV1td_eD2aqTib7Vg"
                   >
-                    {bigVideoVisible && (
+                    {settings.big_video_visible && (
                       <video
                         style={{
                           top:
@@ -96,6 +96,7 @@ const Home1 = () => {
                                 ? ""
                                 : "100%",
                             transition: "width 0.5s ease-in-out",
+                            height: "100%",
                           }}
                         >
                           <video

@@ -6,7 +6,7 @@
   "result": {
     "settings": {
       "small_video": {
-        "position": "vertical"
+        "position": "horizontal"
       },
       "big_video": {
         "visible": true
