@@ -1,25 +1,34 @@
-import { useState } from "react";
-import { settings } from "../../api";
+import { useRef, useState } from "react";
+// import { settings } from "../../api";
 // import BigVideo from "./BigVideo";
+// import SmallVideo from "./SmallVideo";
 import Footer from "./Footer";
 import { useEffect } from "react";
-// import SmallVideo from "./SmallVideo";
+import { useVideoFormatQuery } from "../../redux/features/video/videoApi";
 const Home1 = () => {
-  // const [smallVideoPosition, setSmallVideoPosition] = useState("vertical");
-  // const [bigVideoVisible, setBigVideoVisible] = useState(true);
+  const isInitialLoad = useRef(true);
   const [animationStage, setAnimationStage] = useState("idle");
+  const [smallVideoPosition, setSmallVideoPosition] = useState(null);
+  const [bigVideoVisible, setBigVideoVisible] = useState(null);
+  const { data } = useVideoFormatQuery(undefined, { pollingInterval: 1000 });
 
   const defineVideosPosition = () => {
-    if (
-      settings.big_video_visible &&
-      settings.small_video_position === "vertical"
-    ) {
+    if (bigVideoVisible && smallVideoPosition === "vertical") {
       return "default";
     }
-    // if (bigVideoVisible && smallVideoPosition === "vertical") {
-    //   return "default";
-    // }
   };
+
+  useEffect(() => {
+    if (data?.success) {
+      setBigVideoVisible(data.result.settings.big_video?.visible);
+      setSmallVideoPosition(data.result.settings.small_video?.position);
+
+      if (!isInitialLoad.current) {
+        setAnimationStage("sliding-in");
+      }
+      isInitialLoad.current = false;
+    }
+  }, [data]);
 
   useEffect(() => {
     if (animationStage === "sliding-out") {
@@ -30,14 +39,7 @@ const Home1 = () => {
   return (
     <div className="slider-wrapper">
       <div className={`slider ${animationStage}`}>
-        <div
-          // onClick={() => {
-          //   setSmallVideoPosition("horizontal");
-          //   setAnimationStage("sliding-out");
-          // }}
-          id="mobile-router-root"
-          className="UPEED "
-        >
+        <div id="mobile-router-root" className="UPEED ">
           <div className="PfEVi">
             <div className="tXrqB">
               <div
@@ -53,7 +55,7 @@ const Home1 = () => {
                     data-testid="mobile-stream"
                     id="stream-4_sRlBV1td_eD2aqTib7Vg"
                   >
-                    {settings.big_video_visible && (
+                    {bigVideoVisible && (
                       <video
                         style={{
                           top:
