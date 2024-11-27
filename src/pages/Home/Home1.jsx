@@ -9,8 +9,11 @@ const Home1 = () => {
   const isInitialLoad = useRef(true);
   const [animationStage, setAnimationStage] = useState("idle");
   const [smallVideoPosition, setSmallVideoPosition] = useState(null);
+  const [smallVideoVisible, setSmallVideoVisible] = useState(null);
   const [bigVideoVisible, setBigVideoVisible] = useState(null);
   const { data } = useVideoFormatQuery(undefined, { pollingInterval: 1000 });
+
+  console.log(data);
 
   const defineVideosPosition = () => {
     if (bigVideoVisible && smallVideoPosition === "vertical") {
@@ -22,6 +25,7 @@ const Home1 = () => {
     if (data?.success) {
       setBigVideoVisible(data.result.settings.big_video?.visible);
       setSmallVideoPosition(data.result.settings.small_video?.position);
+      setSmallVideoVisible(data.result.settings.small_video?.visible);
 
       if (!isInitialLoad.current) {
         setAnimationStage("sliding-out");
@@ -101,15 +105,17 @@ const Home1 = () => {
                             height: "100%",
                           }}
                         >
-                          <video
-                            disablePictureInPicture
-                            playsInline
-                            className="aSvNa"
-                            crossOrigin="use-credentials"
-                            src="/src/assets/video/1.mp4"
-                            autoPlay
-                            muted
-                          />
+                          {smallVideoVisible && (
+                            <video
+                              disablePictureInPicture
+                              playsInline
+                              className="aSvNa"
+                              crossOrigin="use-credentials"
+                              src="/src/assets/video/1.mp4"
+                              autoPlay
+                              muted
+                            />
+                          )}
 
                           <div
                             className="x3Pt5 eEVS4 pXe6i"
