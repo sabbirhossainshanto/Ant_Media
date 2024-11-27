@@ -24,7 +24,7 @@ const Home1 = () => {
       setSmallVideoPosition(data.result.settings.small_video?.position);
 
       if (!isInitialLoad.current) {
-        setAnimationStage("sliding-in");
+        setAnimationStage("sliding-out");
       }
       isInitialLoad.current = false;
     }
