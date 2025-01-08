@@ -77,28 +77,8 @@ const Home1 = () => {
                       />
                     )} */}
 
-                    {/* <BigVideo /> */}
-                    <video
-                      autoPlay
-                      muted
-                      disableRemotePlayback
-                      id="h5live-nstpaOfIYI"
-                      playsInline
-                      style={{
-                        backgroundColor: "black",
-                        display: "block",
-                        width: "100%",
-                        height: "100%",
-                        position: "absolute",
-                        left: "50%",
-                        top: "50%",
-                        marginRight: "-50%",
-                        transform:
-                          "translate(-50%, -50%) scaleX(1) scaleY(1) rotate(0deg)",
-                      }}
-                    >
-                      <source src="https://1app.live/live/play.html?id=football2" />
-                    </video>
+                    <BigVideo />
+
                     {/* <iframe src="https://1app.live/live/play.html?id=football2"></iframe> */}
 
                     <div
