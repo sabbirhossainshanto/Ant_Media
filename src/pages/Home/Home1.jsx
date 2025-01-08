@@ -76,11 +76,9 @@ const Home1 = () => {
                         muted
                       />
                     )} */}
-
                     <BigVideo />
-
+                    gfggdfgdfgfdg
                     {/* <iframe src="https://1app.live/live/play.html?id=football2"></iframe> */}
-
                     <div
                       className="Q60zq"
                       style={{

@@ -3,6 +3,7 @@ import App from "../App";
 import Home from "../pages/Home/Home";
 import Test from "../pages/Test/Test";
 import Home1 from "../pages/Home/Home1";
+import AntMedia from "../pages/Antmedia/Antmedia";
 
 const MainRouter = () => {
   const router = createBrowserRouter(
@@ -13,7 +14,7 @@ const MainRouter = () => {
         children: [
           {
             index: true,
-            element: <Home1 />,
+            element: <AntMedia />,
           },
         ],
       },
