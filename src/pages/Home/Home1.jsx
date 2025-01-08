@@ -5,6 +5,7 @@ import { useRef, useState } from "react";
 import Footer from "./Footer";
 import { useEffect } from "react";
 import { useVideoFormatQuery } from "../../redux/features/video/videoApi";
+import BigVideo from "./BigVideo";
 const Home1 = () => {
   const isInitialLoad = useRef(true);
   const [animationStage, setAnimationStage] = useState("idle");
@@ -13,7 +14,7 @@ const Home1 = () => {
   const [bigVideoVisible, setBigVideoVisible] = useState(null);
   const { data } = useVideoFormatQuery(undefined, { pollingInterval: 1000 });
 
-  console.log(data);
+  // console.log(data);
 
   const defineVideosPosition = () => {
     if (bigVideoVisible && smallVideoPosition === "vertical") {
@@ -59,7 +60,7 @@ const Home1 = () => {
                     data-testid="mobile-stream"
                     id="stream-4_sRlBV1td_eD2aqTib7Vg"
                   >
-                    {bigVideoVisible && (
+                    {/* {bigVideoVisible && (
                       <video
                         style={{
                           top:
@@ -74,9 +75,32 @@ const Home1 = () => {
                         autoPlay
                         muted
                       />
-                    )}
+                    )} */}
 
                     {/* <BigVideo /> */}
+                    <video
+                      autoPlay
+                      muted
+                      disableRemotePlayback
+                      id="h5live-nstpaOfIYI"
+                      playsInline
+                      style={{
+                        backgroundColor: "black",
+                        display: "block",
+                        width: "100%",
+                        height: "100%",
+                        position: "absolute",
+                        left: "50%",
+                        top: "50%",
+                        marginRight: "-50%",
+                        transform:
+                          "translate(-50%, -50%) scaleX(1) scaleY(1) rotate(0deg)",
+                      }}
+                    >
+                      <source src="https://1app.live/live/play.html?id=football2" />
+                    </video>
+                    {/* <iframe src="https://1app.live/live/play.html?id=football2"></iframe> */}
+
                     <div
                       className="Q60zq"
                       style={{
@@ -105,7 +129,7 @@ const Home1 = () => {
                             height: "100%",
                           }}
                         >
-                          {smallVideoVisible && (
+                          {/* {smallVideoVisible && (
                             <video
                               disablePictureInPicture
                               playsInline
@@ -115,7 +139,7 @@ const Home1 = () => {
                               autoPlay
                               muted
                             />
-                          )}
+                          )} */}
 
                           <div
                             className="x3Pt5 eEVS4 pXe6i"
